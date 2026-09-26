@@ -1,0 +1,1 @@
+# aurassi-smart-hotel
