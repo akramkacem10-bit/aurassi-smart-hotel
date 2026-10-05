@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Hotel Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">🏨 <span>AI Hotel Manager</span></div>
+    <nav id="nav"></nav>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <h1>Dashboard</h1>
+        <p>Vue opérationnelle de l'hôtel</p>
+      </div>
+      <button class="ai-button" onclick="openAI()">✨ AI Manager</button>
+    </header>
+
+    <section class="kpis">
+      <div class="card"><span>Occupation</span><strong>82%</strong><small>+6.4% cette semaine</small></div>
+      <div class="card"><span>ADR</span><strong>12 500 DA</strong><small>+3.1%</small></div>
+      <div class="card"><span>RevPAR</span><strong>10 250 DA</strong><small>+5.8%</small></div>
+      <div class="card"><span>Arrivées</span><strong>34</strong><small>12 VIP</small></div>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <h2>⚠️ Alertes opérationnelles</h2>
+        <div class="alert danger">4 chambres hors service</div>
+        <div class="alert warning">8 chambres prioritaires pour Housekeeping</div>
+        <div class="alert info">3 arrivées VIP aujourd'hui</div>
+      </div>
+      <div class="panel">
+        <h2>📅 Activité du jour</h2>
+        <div class="row"><span>Check-in</span><b>34</b></div>
+        <div class="row"><span>Check-out</span><b>27</b></div>
+        <div class="row"><span>Réclamations ouvertes</span><b>6</b></div>
+        <div class="row"><span>Chambres disponibles</span><b>41</b></div>
+      </div>
+    </section>
+
+    <section class="panel ai-preview">
+      <h2>✨ AI Manager</h2>
+      <p>Posez une question sur l'exploitation de votre hôtel.</p>
+      <div class="prompt">
+        <input id="question" placeholder="Ex: Quelles chambres dois-je prioriser aujourd'hui ?">
+        <button onclick="askAI()">Analyser</button>
+      </div>
+      <div id="answer" class="answer">L'AI Manager sera connecté au backend et aux données réelles dans la prochaine version.</div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <button class="close" onclick="closeAI()">×</button>
+      <h2>✨ AI Manager</h2>
+      <p>Votre assistant de direction hôtelière.</p>
+      <textarea id="aiInput" placeholder="Écrivez votre demande..."></textarea>
+      <button class="primary" onclick="askAI(true)">Analyser</button>
+      <div id="modalAnswer" class="answer"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
